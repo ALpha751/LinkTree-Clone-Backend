@@ -2,7 +2,7 @@ package com.linktree.demo.models;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
+import jakarta.persistence.*; // Changed from javax.persistence.*
 import java.util.UUID;
 
 @Entity
@@ -11,8 +11,8 @@ public class UserModel {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(
-        name = "UUID",
-        strategy = "org.hibernate.id.UUIDGenerator"
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator"
     )
     @Column(updatable = false, nullable = false)
     private UUID id;
@@ -42,7 +42,7 @@ public class UserModel {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(String String) {
         this.email = email;
     }
 }

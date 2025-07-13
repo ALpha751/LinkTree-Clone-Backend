@@ -2,7 +2,7 @@ package com.linktree.demo.models;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
+import jakarta.persistence.*; // Changed from javax.persistence.*
 import java.util.UUID;
 
 @Entity
