@@ -2,7 +2,7 @@ package com.linktree.demo.models;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
+import jakarta.persistence.*; // Changed from javax.persistence.*
 import java.util.UUID;
 
 @Entity
@@ -17,11 +17,11 @@ public class LinksModel {
     @Column(updatable = false, nullable = false)
     private UUID id;
 
-    private String disp_name;
+    private String displayName;
 
     private String URL;
 
-    private String user_id;
+    private String userId;
 
     // Getters and setters
     public UUID getId() {
@@ -33,11 +33,11 @@ public class LinksModel {
     }
 
     public String getName() {
-        return disp_name;
+        return displayName;
     }
 
     public void setName(String disp_name) {
-        this.disp_name = disp_name;
+        this.displayName = disp_name;
     }
 
     public String getURL() {
@@ -49,10 +49,10 @@ public class LinksModel {
     }
 
     public String getUserId() {
-        return user_id;
+        return userId;
     }
 
     public void setUserId(String user_id) {
-        this.user_id = user_id;
+        this.userId = user_id;
     }
 }
