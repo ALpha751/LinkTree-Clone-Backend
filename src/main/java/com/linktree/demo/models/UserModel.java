@@ -42,7 +42,7 @@ public class UserModel {
         return email;
     }
 
-    public void setEmail(String String) {
+    public void setEmail(String email) {
         this.email = email;
     }
 }
