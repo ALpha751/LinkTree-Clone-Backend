@@ -6,6 +6,7 @@ import jakarta.persistence.*; // Changed from javax.persistence.*
 import java.util.UUID;
 
 @Entity
+@Table(name = "LINKS")
 public class LinksModel {
 
     @Id
@@ -21,7 +22,8 @@ public class LinksModel {
 
     private String URL;
 
-    private String userId;
+    @Column(nullable = false)
+    private UUID userId;
 
     // Getters and setters
     public UUID getId() {
@@ -48,11 +50,11 @@ public class LinksModel {
         this.URL = URL;
     }
 
-    public String getUserId() {
+    public UUID getUserId() {
         return userId;
     }
 
-    public void setUserId(String user_id) {
-        this.userId = user_id;
+    public void setUserId(UUID userId) {
+        this.userId = userId;
     }
 }

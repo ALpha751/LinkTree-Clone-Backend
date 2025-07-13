@@ -6,6 +6,7 @@ import jakarta.persistence.*; // Changed from javax.persistence.*
 import java.util.UUID;
 
 @Entity
+@Table(name = "USERS")
 public class UserModel {
 
     @Id

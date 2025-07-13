@@ -23,11 +23,11 @@ public class LinksService {
     private UserRepository userRepository; // Inject UserRepository
 
     // Helper method to validate if a user exists
-    private void validateUserExists(String userId) {
-        if (userId == null || userId.isEmpty()) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "User ID cannot be null or empty.");
+    private void validateUserExists(UUID userId) {
+        if (userId == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "User ID cannot be null.");
         }
-        Optional<UserModel> user = userRepository.findById(UUID.fromString(userId));
+        Optional<UserModel> user = userRepository.findById(userId);
         if (user.isEmpty()) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User with ID " + userId + " not found.");
         }
@@ -64,7 +64,7 @@ public class LinksService {
         return false;
     }
 
-    public List<LinksModel> getLinksByUserId(String userId) {
+    public List<LinksModel> getLinksByUserId(UUID userId) {
         validateUserExists(userId); // Validate the user ID before fetching links
         return linksRepository.findByUserId(userId);
     }
