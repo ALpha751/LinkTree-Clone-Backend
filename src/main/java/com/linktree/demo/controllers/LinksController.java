@@ -68,7 +68,7 @@ public class LinksController {
     }
 
     @GetMapping("/user/{userId}")
-    public ResponseEntity<List<LinksModel>> getLinksByUserId(@PathVariable String userId) {
+    public ResponseEntity<List<LinksModel>> getLinksByUserId(@PathVariable UUID userId) {
         try {
             List<LinksModel> links = linksService.getLinksByUserId(userId);
             if (!links.isEmpty()) {

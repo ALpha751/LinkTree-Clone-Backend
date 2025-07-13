@@ -9,5 +9,5 @@ import java.util.UUID;
 
 @Repository
 public interface LinksRepository extends JpaRepository<LinksModel, UUID> {
-    List<LinksModel> findByUserId(String userId); // <--- This is the problematic method
+    List<LinksModel> findByUserId(UUID userId); // <--- This is the problematic method
 }
